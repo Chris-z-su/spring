@@ -73,10 +73,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void save() {
-        System.out.println("running save()...");
-//        System.out.println(username + ":" + age);
-        System.out.println(stringList);
-        System.out.println(userMap);
-        System.out.println(properties);
+        System.out.println("Start running UserDaoImpl.save()...");
+        System.out.println("username: " + username + ", age: " + age);
+        System.out.println("stringList: " + stringList);
+        System.out.println("userMap: " + userMap);
+        System.out.println("properties: " + properties);
+        System.out.println("end running UserDaoImpl.save()...");
     }
 }

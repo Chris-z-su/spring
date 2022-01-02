@@ -27,6 +27,8 @@
 
     <!--注入集合数据类型-->
     <bean id="userDao" class="com.shubao.dao.impl.UserDaoImpl">
+        <property name="username" value="zhangsan"></property>
+        <property name="age" value="18"></property>
         <property name="stringList">
             <list>
                 <value>aaa</value>

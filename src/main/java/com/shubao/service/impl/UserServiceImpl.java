@@ -20,6 +20,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save() {
+        System.out.println("start UserServiceImpl.save()...");
         userDao.save();
+        System.out.println("end UserServiceImpl.save()...");
     }
 }

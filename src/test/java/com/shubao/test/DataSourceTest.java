@@ -4,7 +4,10 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidPooledConnection;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -58,6 +61,18 @@ public class DataSourceTest {
         Connection connection = dataSource.getConnection();
         System.out.println(connection);
         connection.close();
+    }
 
+    @Test
+    //测试spring容器创建产生数据源对象
+    public void testSpringCreateDatasource() throws PropertyVetoException, SQLException {
+        //加载配置文件
+        ApplicationContext app = new ClassPathXmlApplicationContext("applicationContext.xml");
+        DataSource dataSource = app.getBean(DataSource.class);
+
+        //获取连接
+        Connection connection = dataSource.getConnection();
+        System.out.println(connection);
+        connection.close();
     }
 }
