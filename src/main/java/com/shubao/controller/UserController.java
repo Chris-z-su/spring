@@ -1,14 +1,26 @@
 package com.shubao.controller;
 
+import com.shubao.config.SpringConfiguration;
 import com.shubao.service.UserService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class UserController {
 
     public static void main(String[] args) {
 //        testApplication();
-        testAnnotation();
+//        testAnnotation();
+        testConguration();
+    }
+
+    /**
+     * 测试通过注解的方式配置类
+     */
+    private static void testConguration(){
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+        UserService userService = applicationContext.getBean(UserService.class);
+        userService.save();
     }
 
     private static void testAnnotation(){
