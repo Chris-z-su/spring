@@ -7,9 +7,12 @@
        ">
 
     <!--  注入方式采用注解的方式  -->
-    <import resource="applicationContext-user-dao.xml"></import>
+<!--    <import resource="applicationContext-user-dao.xml"></import>-->
 
-    <import resource="applicationContext-user-service.xml"></import>
+<!--    <import resource="applicationContext-user-service.xml"></import>-->
+
+    <!--  配置组件扫描  -->
+    <context:component-scan base-package="com.shubao"></context:component-scan>
 
     <!--  加载外部的properties文件  -->
     <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
