@@ -3,9 +3,6 @@ package com.shubao.dao.impl;
 import com.shubao.dao.UserDao;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 //@Component("userDao")
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
@@ -64,15 +61,15 @@ public class UserDaoImpl implements UserDao {
         System.out.println("UserDaoImpl创建。。。");
     }
 
-    @PostConstruct
-    public void init(){
-        System.out.println("UserDaoImpl.init()...");
-    }
-
-    @PreDestroy
-    public void destroy(){
-        System.out.println("UserDaoImpl.destroy()...");
-    }
+//    @PostConstruct
+//    public void init(){
+//        System.out.println("UserDaoImpl.init()...");
+//    }
+//
+//    @PreDestroy
+//    public void destroy(){
+//        System.out.println("UserDaoImpl.destroy()...");
+//    }
 
     @Override
     public void save() {

@@ -2,7 +2,6 @@ package com.shubao.service.impl;
 
 import com.shubao.dao.UserDao;
 import com.shubao.service.UserService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +13,8 @@ import javax.annotation.Resource;
 @Scope("singleton")
 public class UserServiceImpl implements UserService {
 
-    @Value("${jdbc.driver}")
-    private String driver;
+//    @Value("${jdbc.driver}")
+//    private String driver;
 
 //    @Autowired //按照数据类型从Spring容器中进行匹配
 //    @Qualifier("userDao") //按照id值从容器中进行匹配的，但是此处@Qualifier结合@Autowired一起使用
@@ -36,7 +35,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save() {
         System.out.println("start UserServiceImpl.save()...");
-        System.out.println(driver);
+//        System.out.println(driver);
         userDao.save();
         System.out.println("end UserServiceImpl.save()...");
     }
