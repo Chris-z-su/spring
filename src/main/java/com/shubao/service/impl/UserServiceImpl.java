@@ -5,8 +5,6 @@ import com.shubao.service.UserService;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-
 //@Component("userService")
 @Service("userService")
 //@Scope("prototype") //标注bean的作用范围
@@ -18,12 +16,12 @@ public class UserServiceImpl implements UserService {
 
 //    @Autowired //按照数据类型从Spring容器中进行匹配
 //    @Qualifier("userDao") //按照id值从容器中进行匹配的，但是此处@Qualifier结合@Autowired一起使用
-    @Resource(name = "userDao") //@Resource相当于@Autowired + @Qualifier
+//    @Resource(name = "userDao") //@Resource相当于@Autowired + @Qualifier
     private UserDao userDao;
 
-//    public void setUserDao(UserDao userDao) {
-//        this.userDao = userDao;
-//    }
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
 //    public UserServiceImpl() {
 //    }
