@@ -10,50 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12971e71-25eb-4b0d-9984-71546071cd75" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shubao/listener/ContextLoaderListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/shubao/util/WebApplicationContextUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spring_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/spring_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_2_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_13.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/shubao/web/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shubao/web/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/shubao/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shubao/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/config/DataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/config/DataSourceConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/config/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/config/SpringConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/shubao/test/SpringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shubao/test/SpringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/factory/DynamicFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/factory/DynamicFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/factory/StaticFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/factory/StaticFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/web/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/web/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/config/DataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/config/DataSourceConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/config/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/config/SpringConfiguration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/dao/impl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/factory/DynamicFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/factory/DynamicFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/factory/StaticFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/factory/StaticFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/web/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/web/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/lib/mysql-connector-java-5.1.3.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/shubao/test/DataSourceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/shubao/test/DataSourceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringJunitTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringJunitTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +43,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="Jsp File" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -778,7 +748,8 @@
       <workItem from="1641212153764" duration="2242000" />
       <workItem from="1641304479153" duration="5324000" />
       <workItem from="1641572014785" duration="2027000" />
-      <workItem from="1641610698307" duration="3454000" />
+      <workItem from="1641610698307" duration="6758000" />
+      <workItem from="1641630464263" duration="1360000" />
     </task>
     <servers />
   </component>
