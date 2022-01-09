@@ -10,20 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12971e71-25eb-4b0d-9984-71546071cd75" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/success.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/spring_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/spring_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/shubao/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/shubao/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/shubao/test/SpringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/shubao/test/SpringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/shubao/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/shubao/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/classes/com/shubao/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/shubao/test/SpringTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -749,7 +739,7 @@
       <workItem from="1641304479153" duration="5324000" />
       <workItem from="1641572014785" duration="2027000" />
       <workItem from="1641610698307" duration="6758000" />
-      <workItem from="1641630464263" duration="1360000" />
+      <workItem from="1641630464263" duration="3266000" />
     </task>
     <servers />
   </component>
