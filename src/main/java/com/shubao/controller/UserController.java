@@ -12,7 +12,11 @@ public class UserController {
     public String save(String username){
         System.out.println("UserController.save() running...");
         System.out.println("username = " + username);
-        return "/success.jsp";
+
+//        return "/success.jsp";//默认方式：forward 转发
+//        return "forward:/success.jsp";//forward 转发
+//        return "redirect:/success.jsp";//redirect 重定向
+        return "success";//配置视图解析器
     }
 
 }
