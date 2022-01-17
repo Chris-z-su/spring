@@ -1,8 +1,8 @@
 package com.shubao.controller;
 
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -67,16 +67,17 @@ public class UserController {
         response.getWriter().print("Hello, Spring!");
     }
 
-    @RequestMapping(value = "/quick7", produces= MediaType.TEXT_HTML_VALUE+";charset=utf-8")
+    @GetMapping(value = "/quick7")  //, produces= MediaType.TEXT_HTML_VALUE+";charset=utf-8"
     @ResponseBody  //告知Spring框架，该方法不进行视图跳转，直接进行数据响应
-    public String save7() throws Exception {
-       return "Hello, Spring!";
+    public String save7(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setContentType("application/json;charset=utf-8");
+       return "hello,spring!";
     }
 
     @RequestMapping(value = "/quick8")
     @ResponseBody  //告知Spring框架，该方法不进行视图跳转，直接进行数据响应
     public String save8() throws Exception {
-        return "Hello, Spring!";
+        return "123";
     }
 
 }
