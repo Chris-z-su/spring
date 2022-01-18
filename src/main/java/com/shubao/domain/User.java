@@ -2,39 +2,45 @@ package com.shubao.domain;
 
 public class User {
 
-    private String name;
+    /**
+     * 用户名
+     */
+    private String username;
 
-    private String addr;
+    /**
+     * 年龄
+     */
+    private int age;
 
     public User() {
     }
 
-    public User(String name, String addr) {
-        this.name = name;
-        this.addr = addr;
+    public User(String username, int age) {
+        this.username = username;
+        this.age = age;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getAddr() {
-        return addr;
+    public int getAge() {
+        return age;
     }
 
-    public void setAddr(String addr) {
-        this.addr = addr;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
-                ", addr='" + addr + '\'' +
+                "username='" + username + '\'' +
+                ", age=" + age +
                 '}';
     }
 }
