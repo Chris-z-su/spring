@@ -93,4 +93,13 @@ public class UserController {
         return json;
     }
 
+    @RequestMapping(value = "/quick10")
+    @ResponseBody
+    public User save10() throws Exception {
+        User user = new User();
+        user.setName("zhangsan");
+        user.setAddr("shanxi");
+        return user;
+    }
+
 }
