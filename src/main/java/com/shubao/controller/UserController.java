@@ -2,8 +2,10 @@ package com.shubao.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shubao.domain.User;
+import com.shubao.domain.VO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -151,6 +154,23 @@ public class UserController {
     @ResponseBody
     public void save13(String[] strs) throws Exception {
         System.out.println(Arrays.asList(strs));
+    }
+
+    /**
+     * 请求参数类型为集合，用POJO对象接收
+     * @param vo
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick14")
+    @ResponseBody
+    public void save14(VO vo) throws Exception {
+        System.out.println(vo);
+    }
+
+    @RequestMapping(value = "/quick15")
+    @ResponseBody
+    public void save15(@RequestBody List<User> userList) throws Exception {
+        System.out.println(userList);
     }
 
 }
