@@ -5,10 +5,7 @@ import com.shubao.domain.User;
 import com.shubao.domain.VO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -167,10 +164,32 @@ public class UserController {
         System.out.println(vo);
     }
 
+    /**
+     * 使用注解@RequestBody
+     * @param userList
+     * @throws Exception
+     */
     @RequestMapping(value = "/quick15")
     @ResponseBody
     public void save15(@RequestBody List<User> userList) throws Exception {
         System.out.println(userList);
+    }
+
+    @RequestMapping(value = "/quick16")
+    @ResponseBody
+    public void save16(@RequestParam(value = "username", required = false, defaultValue = "tom") String username) throws Exception {
+        System.out.println(username);
+    }
+
+    /**
+     * Restful风格
+     * @param username
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick17/{username}")
+    @ResponseBody
+    public void save17(@PathVariable("username") String username) throws Exception {
+        System.out.println(username);
     }
 
 }
