@@ -6,11 +6,13 @@ import com.shubao.domain.VO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Date;
@@ -239,6 +241,44 @@ public class UserController {
     @ResponseBody
     public void save21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) throws Exception {
         System.out.println("jsessionId = " + jsessionId);
+    }
+
+    /**
+     * 单文件上传
+     * @param username
+     * @param file1
+     * @param file2
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick22")
+    @ResponseBody
+    public void save22(String username, MultipartFile file1, MultipartFile file2) throws Exception {
+        System.out.println("username = " + username);
+        //获得上传文件的名称
+        String originalFilename1 = file1.getOriginalFilename();
+        System.out.println("originalFilename1 = " + originalFilename1);
+        file1.transferTo(new File("D:\\logs\\" + originalFilename1));
+
+        String originalFilename2 = file2.getOriginalFilename();
+        System.out.println("originalFilename2 = " + originalFilename2);
+        file2.transferTo(new File("D:\\logs\\" + originalFilename2));
+    }
+
+    /**
+     * 多文件上传
+     * @param username
+     * @param file
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick23")
+    @ResponseBody
+    public void save23(String username, MultipartFile[] file) throws Exception {
+        System.out.println("username = " + username);
+        //获得上传文件的名称
+        for (MultipartFile multipartFile : file){
+            String originalFilename = multipartFile.getOriginalFilename();
+            multipartFile.transferTo(new File("D:\\logs\\" + originalFilename));
+        }
     }
 
 }
