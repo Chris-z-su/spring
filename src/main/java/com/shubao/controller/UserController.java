@@ -10,8 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -190,6 +192,53 @@ public class UserController {
     @ResponseBody
     public void save17(@PathVariable("username") String username) throws Exception {
         System.out.println(username);
+    }
+
+    /**
+     * 自定义转换器：日期格式转换器
+     * @param date
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick18")
+    @ResponseBody
+    public void save18(Date date) throws Exception {
+        System.out.println(date);
+    }
+
+    /**
+     * 获取Servlet相关API
+     * @param request
+     * @param response
+     * @param session
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick19")
+    @ResponseBody
+    public void save19(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception {
+        System.out.println("request = " + request);
+        System.out.println("response = " + response);
+        System.out.println("session = " + session);
+    }
+
+    /**
+     * 使用注解@RequestHead获取请求头
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick20")
+    @ResponseBody
+    public void save20(@RequestHeader(value = "User-Agent", required = false) String user_agent) throws Exception {
+        System.out.println("user_agent = " + user_agent);
+    }
+
+    /**
+     * 使用@CookieValue获取cookie的value
+     * @param jsessionId
+     * @throws Exception
+     */
+    @RequestMapping(value = "/quick21")
+    @ResponseBody
+    public void save21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) throws Exception {
+        System.out.println("jsessionId = " + jsessionId);
     }
 
 }
