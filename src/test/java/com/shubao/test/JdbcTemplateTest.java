@@ -18,7 +18,7 @@ public class JdbcTemplateTest {
         //创建数据源对象
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         dataSource.setDriverClass("com.mysql.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/user");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/wollo");
         dataSource.setUser("root");
         dataSource.setPassword("1106135");
 
@@ -38,7 +38,7 @@ public class JdbcTemplateTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         JdbcTemplate jdbcTemplate = context.getBean(JdbcTemplate.class);
         //执行操作
-        int i = jdbcTemplate.update("insert into account value(?, ?)", "zhangsan", 600);
+        int i = jdbcTemplate.update("insert into account value(?, ?)", "lisi", 8000);
         System.out.println(i);
     }
 }
