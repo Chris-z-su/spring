@@ -35,10 +35,11 @@ public class UserController {
 
     @RequestMapping(value = "/quick2")
     public ModelAndView save2(){
-        /**
-         * Model: 模型，作用是封装数据
-         * View: 视图，作用是展示数据
-         */
+
+        /*
+        Model: 模型，作用是封装数据
+        View: 视图，作用是展示数据
+        */
         ModelAndView modelAndView = new ModelAndView();
         //设置模型数据
         modelAndView.addObject("username", "zhangsan");
@@ -75,50 +76,47 @@ public class UserController {
 
     /**
      * 使用ResponseBody注解，告诉Spring框架，该方法不进行视图跳转，直接进行数据响应
-     * @return
-     * @throws Exception
+     * @return 响应的数据
      */
     @RequestMapping(value = "/quick7")  //, produces= MediaType.TEXT_HTML_VALUE+";charset=utf-8"
     @ResponseBody  //告知Spring框架，该方法不进行视图跳转，直接进行数据响应
-    public String save7() throws Exception {
+    public String save7() {
         return "hello,spring!";
     }
 
     @RequestMapping(value = "/quick8")
     @ResponseBody
-    public String save8() throws Exception {
+    public String save8() {
         return "{\"username\": \"zhangsan\", \"age\": 18}";
     }
 
     /**
      * 使用Jackson手动转换POJO对象为json格式
-     * @return
-     * @throws Exception
+     * @return 响应的数据json字符串
+     * @throws Exception writeValueAsString()方法的异常
      */
     @RequestMapping(value = "/quick9")
     @ResponseBody
     public String save9() throws Exception {
         User user = new User();
         user.setUsername("zhangsan");
-        user.setAge(18);
+//        user.setAge(18);
 
         //使用json的转换工具，将对象转换成json格式字符串返回
         ObjectMapper objectMapper = new ObjectMapper();
-        String json = objectMapper.writeValueAsString(user);
-        return json;
+        return objectMapper.writeValueAsString(user);
     }
 
     /**
      * 通过Spring MVC的注解驱动解析POJO对象类型的响应数据
-     * @return
-     * @throws Exception
+     * @return 响应数据
      */
     @RequestMapping(value = "/quick10")
     @ResponseBody
-    public User save10() throws Exception {
+    public User save10() {
         User user = new User();
         user.setUsername("zhangsan");
-        user.setAge(18);
+//        user.setAge(18);
         return user;
     }
 
@@ -126,97 +124,89 @@ public class UserController {
      * 请求参数类型为普通数据类型
      * @param username 用户名
      * @param age 年龄
-     * @throws Exception
      */
     @RequestMapping(value = "/quick11")
     @ResponseBody
-    public void save11(String username, int age) throws Exception {
+    public void save11(String username, int age) {
         System.out.println(username);
         System.out.println(age);
     }
 
     /**
      * 请求参数类型为POJO对象
-     * @param user
-     * @throws Exception
+     * @param user 请求参数对象
      */
     @RequestMapping(value = "/quick12")
     @ResponseBody
-    public void save12(User user) throws Exception {
+    public void save12(User user) {
         System.out.println(user);
     }
 
     /**
      * 请求参数类型为数组
-     * @param strs
-     * @throws Exception
+     * @param strs 请求参数数组
      */
     @RequestMapping(value = "/quick13")
     @ResponseBody
-    public void save13(String[] strs) throws Exception {
+    public void save13(String[] strs) {
         System.out.println(Arrays.asList(strs));
     }
 
     /**
      * 请求参数类型为集合，用POJO对象接收
-     * @param vo
-     * @throws Exception
+     * @param vo 请求参数VO对象
      */
     @RequestMapping(value = "/quick14")
     @ResponseBody
-    public void save14(VO vo) throws Exception {
+    public void save14(VO vo) {
         System.out.println(vo);
     }
 
     /**
      * 使用注解@RequestBody
-     * @param userList
-     * @throws Exception
+     * @param userList 请求参数List集合
      */
     @RequestMapping(value = "/quick15")
     @ResponseBody
-    public void save15(@RequestBody List<User> userList) throws Exception {
+    public void save15(@RequestBody List<User> userList) {
         System.out.println(userList);
     }
 
     @RequestMapping(value = "/quick16")
     @ResponseBody
-    public void save16(@RequestParam(value = "username", required = false, defaultValue = "tom") String username) throws Exception {
+    public void save16(@RequestParam(value = "username", required = false, defaultValue = "tom") String username) {
         System.out.println(username);
     }
 
     /**
      * Restful风格
-     * @param username
-     * @throws Exception
+     * @param username 用户名
      */
     @RequestMapping(value = "/quick17/{username}")
     @ResponseBody
-    public void save17(@PathVariable("username") String username) throws Exception {
+    public void save17(@PathVariable("username") String username) {
         System.out.println(username);
     }
 
     /**
      * 自定义转换器：日期格式转换器
-     * @param date
-     * @throws Exception
+     * @param date 日期
      */
     @RequestMapping(value = "/quick18")
     @ResponseBody
-    public void save18(Date date) throws Exception {
+    public void save18(Date date) {
         System.out.println(date);
     }
 
     /**
      * 获取Servlet相关API
-     * @param request
-     * @param response
-     * @param session
-     * @throws Exception
+     * @param request request对象
+     * @param response response对象
+     * @param session session对象
      */
     @RequestMapping(value = "/quick19")
     @ResponseBody
-    public void save19(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception {
+    public void save19(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         System.out.println("request = " + request);
         System.out.println("response = " + response);
         System.out.println("session = " + session);
@@ -224,31 +214,30 @@ public class UserController {
 
     /**
      * 使用注解@RequestHead获取请求头
-     * @throws Exception
+     * @param user_agent user_agent对象
      */
     @RequestMapping(value = "/quick20")
     @ResponseBody
-    public void save20(@RequestHeader(value = "User-Agent", required = false) String user_agent) throws Exception {
+    public void save20(@RequestHeader(value = "User-Agent", required = false) String user_agent) {
         System.out.println("user_agent = " + user_agent);
     }
 
     /**
      * 使用@CookieValue获取cookie的value
-     * @param jsessionId
-     * @throws Exception
+     * @param jsessionId JSESSIONID对象
      */
     @RequestMapping(value = "/quick21")
     @ResponseBody
-    public void save21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) throws Exception {
+    public void save21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) {
         System.out.println("jsessionId = " + jsessionId);
     }
 
     /**
      * 单文件上传
-     * @param username
-     * @param file1
-     * @param file2
-     * @throws Exception
+     * @param username 用户名
+     * @param file1 文件1
+     * @param file2 文件2
+     * @throws Exception IO异常
      */
     @RequestMapping(value = "/quick22")
     @ResponseBody
@@ -266,9 +255,9 @@ public class UserController {
 
     /**
      * 多文件上传
-     * @param username
-     * @param file
-     * @throws Exception
+     * @param username 用户名
+     * @param file 文件列表
+     * @throws Exception IO异常
      */
     @RequestMapping(value = "/quick23")
     @ResponseBody

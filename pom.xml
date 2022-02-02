@@ -34,6 +34,11 @@
       <!--文件上传-->
       <commons-fileupload.version>1.4</commons-fileupload.version>
       <commons-io.version>2.6</commons-io.version>
+      <commons-logging.version>1.2</commons-logging.version>
+
+      <!--   log4j   -->
+      <slf4j-log4j12.version>1.7.7</slf4j-log4j12.version>
+      <log4j.version>1.2.17</log4j.version>
  </properties>
 
   <dependencies>
@@ -146,6 +151,24 @@
           <version>${commons-io.version}</version>
       </dependency>
 
+      <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>${commons-logging.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>${slf4j-log4j12.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>${log4j.version}</version>
+      </dependency>
+
       <!--Spring jdbc-->
       <dependency>
           <groupId>org.springframework</groupId>
@@ -157,6 +180,12 @@
           <groupId>org.springframework</groupId>
           <artifactId>spring-tx</artifactId>
           <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
       </dependency>
 
   </dependencies>

@@ -17,4 +17,9 @@
     <!--<constructor-arg name="userDao" ref="userDao"></constructor-arg>-->
     <!--</bean>-->
 
+    <!--  配置RoleService  -->
+    <bean id="roleService" class="com.shubao.service.impl.RoleServiceImpl">
+        <property name="roleDao" ref="roleDao"></property>
+    </bean>
+
 </beans>

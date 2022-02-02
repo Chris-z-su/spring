@@ -2,22 +2,33 @@ package com.shubao.domain;
 
 public class User {
 
-    /**
-     * 用户名
-     */
+    private Long id;
+
     private String username;
 
-    /**
-     * 年龄
-     */
-    private int age;
+    private String email;
+
+    private String password;
+
+    private String phoneNum;
 
     public User() {
     }
 
-    public User(String username, int age) {
+    public User(Long id, String username, String email, String password, String phoneNum) {
+        this.id = id;
         this.username = username;
-        this.age = age;
+        this.email = email;
+        this.password = password;
+        this.phoneNum = phoneNum;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -28,19 +39,38 @@ public class User {
         this.username = username;
     }
 
-    public int getAge() {
-        return age;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
-                ", age=" + age +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phoneNum='" + phoneNum + '\'' +
                 '}';
     }
 }

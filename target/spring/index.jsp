@@ -10,6 +10,9 @@
       <span id="from" style="float: right;"></span>
   </p>
 </div>
+<%
+    response.sendRedirect(request.getContextPath()+"/pages/main.jsp");
+%>
 <script>
     var xhr = new XMLHttpRequest();
     xhr.open('get', 'https://v1.hitokoto.cn');

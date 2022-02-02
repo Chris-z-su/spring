@@ -61,4 +61,9 @@
         <!--<property name="addr" value="tianjin"></property>-->
     <!--</bean>-->
 
+    <!--  配置RoleDao  -->
+    <bean id="roleDao" class="com.shubao.dao.impl.RoleDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
+
 </beans>
