@@ -62,7 +62,7 @@ public class SpringTest {
     public void testCommonType(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserDao userDao = (UserDao) context.getBean("userDao");
-        userDao.save();
+//        userDao.save();
     }
 
     /**
@@ -71,14 +71,14 @@ public class SpringTest {
     private static void testConguration(){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
         UserService userService = applicationContext.getBean(UserService.class);
-        userService.save();
+//        userService.save();
     }
 
     private static void testAnnotation(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = applicationContext.getBean(UserService.class);
-        userService.save();
+//        userService.save();
 //        applicationContext.close();
     }
 
@@ -90,7 +90,7 @@ public class SpringTest {
 //        ApplicationContext applicationContext = new FileSystemXmlApplicationContext("E:\\Javademo\\spring\\src\\main\\resources\\applicationContext.xml");
 //        UserService userService = (UserService) applicationContext.getBean("userService");
         UserService userService = applicationContext.getBean(UserService.class);
-        userService.save();
+//        userService.save();
 
         /*
          Exception in thread "main" java.lang.NullPointerException

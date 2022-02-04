@@ -4,7 +4,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--单例模式-->
-    <bean id="userDao" class="com.shubao.dao.impl.UserDaoImpl" scope="singleton"></bean>
+    <bean id="userDao" class="com.shubao.dao.impl.UserDaoImpl" scope="singleton">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
 
     <!--多例模式-->
     <!--<bean id="userDao" class="com.shubao.dao.impl.UserDaoImpl" scope="prototype"></bean>-->

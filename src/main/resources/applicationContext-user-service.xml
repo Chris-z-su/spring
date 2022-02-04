@@ -6,7 +6,8 @@
 
     <!--通过set方式给userService注入userDao-->
     <bean id="userService" class="com.shubao.service.impl.UserServiceImpl">
-        <property name="userDao" ref="userDao"></property>
+        <property name="userDao" ref="userDao" />
+        <property name="roleDao" ref="roleDao" />
     </bean>
 
     <!--p标签注入方式-->
@@ -19,7 +20,7 @@
 
     <!--  配置RoleService  -->
     <bean id="roleService" class="com.shubao.service.impl.RoleServiceImpl">
-        <property name="roleDao" ref="roleDao"></property>
+        <property name="roleDao" ref="roleDao" />
     </bean>
 
 </beans>

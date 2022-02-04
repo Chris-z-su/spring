@@ -33,7 +33,7 @@ public class SpringJunitTest {
 
     @Test
     public void testSpringJunitXML() throws SQLException {
-        userService.save();
+//        userService.save();
         System.out.println(dataSource.getConnection());
     }
 }

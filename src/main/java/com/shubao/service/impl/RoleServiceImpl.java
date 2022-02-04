@@ -19,4 +19,9 @@ public class RoleServiceImpl implements RoleService {
         List<Role> roleList = roleDao.findAll();
         return roleList;
     }
+
+    @Override
+    public void saveRole(Role role) {
+        roleDao.save(role);
+    }
 }
