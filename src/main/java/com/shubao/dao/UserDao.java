@@ -15,4 +15,6 @@ public interface UserDao {
     void deleteUserRoleRel(Long userId);
 
     void deleteUser(Long userId);
+
+    User findUser(String username, String password);
 }

@@ -19,7 +19,9 @@
 
     <!--2.配置内部资源视图解析器-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/" />
+        <property name="prefix" value="/pages/" />
+        <!--<property name="prefix" value="/jsp/" />-->
+        <!--<property name="prefix" value="/" />-->
         <property name="suffix" value=".jsp" />
     </bean>
 
@@ -36,8 +38,9 @@
     <mvc:annotation-driven conversion-service="conversionService" />
 
     <!--表示在Spring MVC框架当中，开发哪些资源的访问-->
-    <!--<mvc:resources mapping="/js/**" location="/js/"></mvc:resources>-->
-    <!--<mvc:resources mapping="/css/**" location="/css/"></mvc:resources>-->
+    <!--<mvc:resources mapping="/js/**" location="/js/" />-->
+    <!--<mvc:resources mapping="/css/**" location="/css/" />-->
+    <!--<mvc:resources mapping="/img/**" location="/img/" />-->
 
     <!--3.静态资源权限开放：表示如果Spring框架找不到对应的资源，就交由原始的容器(tomcat)寻找对应的资源-->
     <mvc:default-servlet-handler />
@@ -63,16 +66,27 @@
 
     <!--配置拦截器-->
     <mvc:interceptors>
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;对那些资源执行拦截操作&ndash;&gt;-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.shubao.interceptor.MyInterceptor1" />-->
+        <!--</mvc:interceptor>-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;对那些资源执行拦截操作&ndash;&gt;-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.shubao.interceptor.MyInterceptor2" />-->
+        <!--</mvc:interceptor>-->
+
+        <!--配置登录权限拦截器-->
         <mvc:interceptor>
-            <!--对那些资源执行拦截操作-->
+            <!--配置对哪些资源执行拦截操作-->
             <mvc:mapping path="/**"/>
-            <bean class="com.shubao.interceptor.MyInterceptor1" />
+            <!--配置对哪些资源排除拦截操作-->
+            <mvc:exclude-mapping path="/user/login" />
+            <bean class="com.shubao.interceptor.PrivilegeInterceptor" />
         </mvc:interceptor>
-        <mvc:interceptor>
-            <!--对那些资源执行拦截操作-->
-            <mvc:mapping path="/**"/>
-            <bean class="com.shubao.interceptor.MyInterceptor2" />
-        </mvc:interceptor>
+
     </mvc:interceptors>
+
 
 </beans>

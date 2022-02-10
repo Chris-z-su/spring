@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <body>
-<h2>Hello, ${name}!</h2>
+<%--<h2>Hello, ${name}!</h2>--%>
+<h2>Hello, Spring!</h2>
 <div style="width: 50%;">
   <p>
       <q id="hitokoto"></q>
@@ -10,9 +11,9 @@
       <span id="from" style="float: right;"></span>
   </p>
 </div>
-<%--<%--%>
-    <%--response.sendRedirect(request.getContextPath()+"/pages/main.jsp");--%>
-<%--%>--%>
+<%
+    response.sendRedirect(request.getContextPath()+"/pages/main.jsp");
+%>
 <script>
     var xhr = new XMLHttpRequest();
     xhr.open('get', 'https://v1.hitokoto.cn');

@@ -6,6 +6,7 @@ import com.shubao.domain.Role;
 import com.shubao.domain.User;
 import com.shubao.service.UserService;
 import org.springframework.context.annotation.Scope;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -78,5 +79,15 @@ public class UserServiceImpl implements UserService {
         userDao.deleteUserRoleRel(userId);
         //2.删除user表的数据
         userDao.deleteUser(userId);
+    }
+
+    @Override
+    public User login(String username, String password) {
+        try {
+            User user = userDao.findUser(username, password);
+            return user;
+        }catch (EmptyResultDataAccessException e){
+            return null;
+        }
     }
 }
