@@ -15,5 +15,10 @@ public class ExceptionController {
     public String show(){
         System.out.println("show() running...");
         exceptionService.show1();
+        //exceptionService.show2();
+        //exceptionService.show3();
+        //exceptionService.show4();
+//        exceptionService.show5();
+        return "index";
     }
 }

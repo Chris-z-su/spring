@@ -23,4 +23,7 @@
         <property name="roleDao" ref="roleDao" />
     </bean>
 
+    <!--  配置ExceptionService  -->
+    <bean id="exceptionService" class="com.shubao.service.impl.ExceptionServiceImpl" />
+
 </beans>
