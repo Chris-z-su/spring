@@ -74,7 +74,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/quick", method = RequestMethod.GET, params = {"username"})
-    public String save(String username){
+    public String quick(String username){
         System.out.println("UserController.save() running...");
         System.out.println("username = " + username);
 
@@ -85,7 +85,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/quick2")
-    public ModelAndView save2(){
+    public ModelAndView quick2(){
 
         /*
         Model: 模型，作用是封装数据
@@ -100,7 +100,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/quick3")
-    public ModelAndView save3(ModelAndView modelAndView){
+    public ModelAndView quick3(ModelAndView modelAndView){
         //设置模型数据
         modelAndView.addObject("username", "lisi");
         //设置视图名
@@ -109,19 +109,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "/quick4")
-    public String save4(Model model){
+    public String quick4(Model model){
         model.addAttribute("username", "wangwu");
         return "success";
     }
 
     @RequestMapping(value = "/quick5")
-    public String save5(HttpServletRequest request){
+    public String quick5(HttpServletRequest request){
         request.setAttribute("username", "张三");
         return "success";
     }
 
     @RequestMapping(value = "/quick6")
-    public void save6(HttpServletResponse response) throws IOException {
+    public void quick6(HttpServletResponse response) throws IOException {
         response.getWriter().print("Hello, Spring!");
     }
 
@@ -131,13 +131,13 @@ public class UserController {
      */
     @RequestMapping(value = "/quick7")  //, produces= MediaType.TEXT_HTML_VALUE+";charset=utf-8"
     @ResponseBody  //告知Spring框架，该方法不进行视图跳转，直接进行数据响应
-    public String save7() {
+    public String quick7() {
         return "hello,spring!";
     }
 
     @RequestMapping(value = "/quick8")
     @ResponseBody
-    public String save8() {
+    public String quick8() {
         return "{\"username\": \"zhangsan\", \"age\": 18}";
     }
 
@@ -148,7 +148,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick9")
     @ResponseBody
-    public String save9() throws Exception {
+    public String quick9() throws Exception {
         User user = new User();
         user.setUsername("zhangsan");
 //        user.setAge(18);
@@ -164,7 +164,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick10")
     @ResponseBody
-    public User save10() {
+    public User quick10() {
         User user = new User();
         user.setUsername("zhangsan");
 //        user.setAge(18);
@@ -178,7 +178,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick11")
     @ResponseBody
-    public void save11(String username, int age) {
+    public void quick11(String username, int age) {
         System.out.println(username);
         System.out.println(age);
     }
@@ -189,7 +189,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick12")
     @ResponseBody
-    public void save12(User user) {
+    public void quick12(User user) {
         System.out.println(user);
     }
 
@@ -199,7 +199,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick13")
     @ResponseBody
-    public void save13(String[] strs) {
+    public void quick13(String[] strs) {
         System.out.println(Arrays.asList(strs));
     }
 
@@ -209,7 +209,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick14")
     @ResponseBody
-    public void save14(VO vo) {
+    public void quick14(VO vo) {
         System.out.println(vo);
     }
 
@@ -219,13 +219,13 @@ public class UserController {
      */
     @RequestMapping(value = "/quick15")
     @ResponseBody
-    public void save15(@RequestBody List<User> userList) {
+    public void quick15(@RequestBody List<User> userList) {
         System.out.println(userList);
     }
 
     @RequestMapping(value = "/quick16")
     @ResponseBody
-    public void save16(@RequestParam(value = "username", required = false, defaultValue = "tom") String username) {
+    public void quick16(@RequestParam(value = "username", required = false, defaultValue = "tom") String username) {
         System.out.println(username);
     }
 
@@ -235,7 +235,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick17/{username}")
     @ResponseBody
-    public void save17(@PathVariable("username") String username) {
+    public void quick17(@PathVariable("username") String username) {
         System.out.println(username);
     }
 
@@ -245,7 +245,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick18")
     @ResponseBody
-    public void save18(Date date) {
+    public void quick18(Date date) {
         System.out.println(date);
     }
 
@@ -257,7 +257,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick19")
     @ResponseBody
-    public void save19(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    public void quick19(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         System.out.println("request = " + request);
         System.out.println("response = " + response);
         System.out.println("session = " + session);
@@ -269,7 +269,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick20")
     @ResponseBody
-    public void save20(@RequestHeader(value = "User-Agent", required = false) String user_agent) {
+    public void quick20(@RequestHeader(value = "User-Agent", required = false) String user_agent) {
         System.out.println("user_agent = " + user_agent);
     }
 
@@ -279,7 +279,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick21")
     @ResponseBody
-    public void save21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) {
+    public void quick21(@CookieValue(value = "JSESSIONID", required = false) String jsessionId) {
         System.out.println("jsessionId = " + jsessionId);
     }
 
@@ -292,7 +292,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick22")
     @ResponseBody
-    public void save22(String username, MultipartFile file1, MultipartFile file2) throws Exception {
+    public void quick22(String username, MultipartFile file1, MultipartFile file2) throws Exception {
         System.out.println("username = " + username);
         //获得上传文件的名称
         String originalFilename1 = file1.getOriginalFilename();
@@ -312,7 +312,7 @@ public class UserController {
      */
     @RequestMapping(value = "/quick23")
     @ResponseBody
-    public void save23(String username, MultipartFile[] file) throws Exception {
+    public void quick23(String username, MultipartFile[] file) throws Exception {
         System.out.println("username = " + username);
         //获得上传文件的名称
         for (MultipartFile multipartFile : file){
