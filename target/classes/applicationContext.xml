@@ -33,36 +33,4 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <!--  Spring AOP基于XML开发  -->
-    <!--  配置目标对象  -->
-    <bean id="target" class="com.shubao.aop.Target"></bean>
-
-    <!--  配置切面对象  -->
-    <bean id="myAspect" class="com.shubao.aop.MyAspect"></bean>
-
-    <!--  配置织入：告诉Spring框架，哪些方法(切点)需要进行哪些增强(前置、后置。。。)  -->
-    <aop:config>
-        <!--    申明切面    -->
-        <aop:aspect ref="myAspect">
-            <!-- 切面：切点+通知 -->
-            <!--抽取切点表达式-->
-            <aop:pointcut id="myPointcut" expression="execution(* com.shubao.aop.*.*(..))" />
-
-            <!--前置增强-->
-            <!--<aop:before method="before" pointcut="execution(public void com.shubao.aop.Target.save())" />-->
-            <aop:before method="before" pointcut="execution(* com.shubao.aop.*.*(..))" />
-            <!--后置增强-->
-            <aop:after-returning method="afterReturning" pointcut="execution(* com.shubao.aop.*.*(..))" />
-            <!--环绕增强-->
-            <!--<aop:around method="around" pointcut="execution(* com.shubao.aop.*.*(..))" />-->
-            <aop:around method="around" pointcut-ref="myPointcut" />
-            <!--异常抛出增强-->
-            <aop:after-throwing method="afterThrowing" pointcut="execution(* com.shubao.aop.*.*(..))" />
-            <!--最终增强-->
-            <!--<aop:after method="after" pointcut="execution(* com.shubao.aop.*.*(..))" />-->
-            <aop:after method="after" pointcut-ref="myPointcut" />
-        </aop:aspect>
-    </aop:config>
-
-
 </beans>
