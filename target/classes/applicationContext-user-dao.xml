@@ -68,4 +68,9 @@
         <property name="jdbcTemplate" ref="jdbcTemplate" />
     </bean>
 
+    <!--  配置AccountDao  -->
+    <bean id="accountDao" class="com.shubao.dao.impl.AccountDaoImpl">
+        <property name="jdbcTemplate" ref="jdbcTemplate" />
+    </bean>
+
 </beans>

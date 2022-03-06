@@ -26,4 +26,9 @@
     <!--  配置ExceptionService  -->
     <bean id="exceptionService" class="com.shubao.service.impl.ExceptionServiceImpl" />
 
+    <!--  配置AccountService对象  -->
+    <bean id="accountService" class="com.shubao.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao" />
+    </bean>
+
 </beans>

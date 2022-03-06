@@ -40,6 +40,8 @@
       <!--   log4j   -->
       <slf4j-log4j12.version>1.7.7</slf4j-log4j12.version>
       <log4j.version>1.2.17</log4j.version>
+
+      <jstl.version>1.2</jstl.version>
  </properties>
 
   <dependencies>
@@ -193,7 +195,7 @@
       <dependency>
           <groupId>jstl</groupId>
           <artifactId>jstl</artifactId>
-          <version>1.2</version>
+          <version>${jstl.version}</version>
       </dependency>
 
   </dependencies>
