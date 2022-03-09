@@ -49,13 +49,17 @@
     <!--  通知 事务的增强  -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="*" />
+            <tx:method name="transfer" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+            <tx:method name="save" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+            <tx:method name="find" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+            <!--<tx:method name="*" />-->
         </tx:attributes>
     </tx:advice>
 
     <!--  配置事务的aop的织入  -->
     <aop:config>
-        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.shubao.service.impl.*.*(..))" />
+        <aop:pointcut id="txPointcut" expression="execution(* com.shubao.service.impl.*.*(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
     </aop:config>
 
 </beans>
