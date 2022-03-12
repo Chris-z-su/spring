@@ -5,10 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--通过set方式给userService注入userDao-->
-    <bean id="userService" class="com.shubao.service.impl.UserServiceImpl">
-        <property name="userDao" ref="userDao" />
-        <property name="roleDao" ref="roleDao" />
-    </bean>
+<!--    <bean id="userService" class="com.shubao.service.impl.UserServiceImpl">-->
+<!--        <property name="userDao" ref="userDao" />-->
+<!--        <property name="roleDao" ref="roleDao" />-->
+<!--    </bean>-->
 
     <!--p标签注入方式-->
     <!--<bean id="userService" class="com.shubao.service.impl.UserServiceImpl" p:userDao-ref="userDao"></bean>-->
@@ -19,11 +19,16 @@
     <!--</bean>-->
 
     <!--  配置RoleService  -->
-    <bean id="roleService" class="com.shubao.service.impl.RoleServiceImpl">
-        <property name="roleDao" ref="roleDao" />
-    </bean>
+<!--    <bean id="roleService" class="com.shubao.service.impl.RoleServiceImpl">-->
+<!--        <property name="roleDao" ref="roleDao" />-->
+<!--    </bean>-->
 
     <!--  配置ExceptionService  -->
     <bean id="exceptionService" class="com.shubao.service.impl.ExceptionServiceImpl" />
+
+    <!--  配置AccountService对象  -->
+<!--    <bean id="accountService" class="com.shubao.service.impl.AccountServiceImpl">-->
+<!--        <property name="accountDao" ref="accountDao" />-->
+<!--    </bean>-->
 
 </beans>

@@ -2,6 +2,7 @@ package com.shubao.dao.impl;
 
 import com.shubao.dao.UserDao;
 import com.shubao.domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -18,11 +19,12 @@ import java.util.List;
 @Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
+//    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
 
     //    private List<String> stringList;
 //

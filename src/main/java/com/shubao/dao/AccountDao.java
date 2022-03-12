@@ -1,10 +1,8 @@
 package com.shubao.dao;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-
 public interface AccountDao {
 
-    void setJdbcTemplate(JdbcTemplate jdbcTemplate);
+//    void setJdbcTemplate(JdbcTemplate jdbcTemplate);
 
     void out(String name, double money);
 

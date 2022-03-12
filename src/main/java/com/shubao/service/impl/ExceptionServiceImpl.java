@@ -2,12 +2,15 @@ package com.shubao.service.impl;
 
 import com.shubao.exception.MyException;
 import com.shubao.service.ExceptionService;
+import org.springframework.stereotype.Service;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+@Service("exceptionService")
 public class ExceptionServiceImpl implements ExceptionService {
+
     @Override
     public void show1() {
         System.out.println("抛出类型转换异常....");

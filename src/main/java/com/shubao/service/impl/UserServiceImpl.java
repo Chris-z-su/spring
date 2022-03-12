@@ -5,6 +5,7 @@ import com.shubao.dao.UserDao;
 import com.shubao.domain.Role;
 import com.shubao.domain.User;
 import com.shubao.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
@@ -20,24 +21,25 @@ public class UserServiceImpl implements UserService {
 //    @Value("${jdbc.driver}")
 //    private String driver;
 
-//    @Autowired //按照数据类型从Spring容器中进行匹配
+    @Autowired //按照数据类型从Spring容器中进行匹配
 //    @Qualifier("userDao") //按照id值从容器中进行匹配的，但是此处@Qualifier结合@Autowired一起使用
 //    @Resource(name = "userDao") //@Resource相当于@Autowired + @Qualifier
     private UserDao userDao;
 
+    @Autowired
     private RoleDao roleDao;
 
-    /**
-     * 通过配置文件的方式注入
-     * @param userDao
-     */
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
+//    /**
+//     * 通过配置文件的方式注入
+//     * @param userDao
+//     */
+//    public void setUserDao(UserDao userDao) {
+//        this.userDao = userDao;
+//    }
 
-    public void setRoleDao(RoleDao roleDao) {
-        this.roleDao = roleDao;
-    }
+//    public void setRoleDao(RoleDao roleDao) {
+//        this.roleDao = roleDao;
+//    }
 
     //    public UserServiceImpl() {
 //    }
