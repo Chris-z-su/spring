@@ -15,6 +15,13 @@
      注意：
         同一个文件内的标签ID不能重复。
     -->
+
+    <!--  sql语句抽取  -->
+    <sql id="selectUser">
+        select * from sys_user
+    </sql>
+
+
     <!--  查询操作  -->
     <select id="findAllForMybatis" resultType="user">
         select * from sys_user
@@ -58,7 +65,7 @@
     </select>
 
     <select id="findByIds" parameterType="list" resultType="user">
-        select * from sys_user
+        <include refid="selectUser" />
         <where>
             <foreach collection="list" open="id in(" close=")" item="id" separator=",">
                 #{id}
