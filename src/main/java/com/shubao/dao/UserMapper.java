@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface UserMapper {
 
-    public List<User> findAllForMybatis() throws IOException;
+    List<User> findAllForMybatis() throws IOException;
+
+    User findOneForMybatis(int id) throws IOException;
+    
 }
