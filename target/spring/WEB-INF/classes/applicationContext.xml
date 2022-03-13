@@ -17,7 +17,8 @@
 <!--    <import resource="applicationContext-user-dao.xml" />-->
 
     <!--  配置组件扫描  -->
-    <context:component-scan base-package="com.shubao" />
+    <context:component-scan base-package="com.shubao.service,com.shubao.dao" />
+<!--    <context:component-scan base-package="com.shubao" />-->
 
     <!--  1.加载外部的properties文件  -->
     <context:property-placeholder location="classpath:jdbc.properties" />

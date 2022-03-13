@@ -1,5 +1,6 @@
 package com.shubao.domain;
 
+import java.util.Date;
 import java.util.List;
 
 public class User {
@@ -14,18 +15,22 @@ public class User {
 
     private String phoneNum;
 
+    private Date birthday;
+
     //当前用户具备哪些角色
     private List<Role> roles;
 
     public User() {
     }
 
-    public User(Long id, String username, String email, String password, String phoneNum) {
+    public User(Long id, String username, String email, String password, String phoneNum, Date birthday, List<Role> roles) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.phoneNum = phoneNum;
+        this.birthday = birthday;
+        this.roles = roles;
     }
 
     public Long getId() {
@@ -68,6 +73,14 @@ public class User {
         this.phoneNum = phoneNum;
     }
 
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
     public List<Role> getRoles() {
         return roles;
     }
@@ -84,6 +97,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phoneNum='" + phoneNum + '\'' +
+                ", birthday=" + birthday +
+                ", roles=" + roles +
                 '}';
     }
 }
