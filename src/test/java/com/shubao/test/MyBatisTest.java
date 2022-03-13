@@ -44,7 +44,7 @@ public class MyBatisTest {
         user.setUsername("tom");
         user.setEmail("tom@@sinosoft.com.cn");
         user.setPassword("123");
-        user.setPhoneNum("18599999999");
+        user.setPhoneNum("19911001122");
 
         //打印数据
         System.out.println("user = " + user);
@@ -54,11 +54,12 @@ public class MyBatisTest {
         //获得session工厂对象
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         //获得session会话对象
-        SqlSession sqlSession = sqlSessionFactory.openSession();
+//        SqlSession sqlSession = sqlSessionFactory.openSession();
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);//true表示不需要手动提交事务
         //执行操作，参数：namespace + id
         sqlSession.insert("userMapper.insertForMybatis", user);
         //mybatis如果执行更新操作，需要手动提交事务
-        sqlSession.commit();
+//        sqlSession.commit();
         //释放资源
         sqlSession.close();
     }
@@ -110,6 +111,27 @@ public class MyBatisTest {
         //释放资源
         sqlSession.close();
     }
+
+    /**
+     * 查询一个对象
+     * @throws IOException
+     */
+    @Test
+    public void test5() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        User user = sqlSession.selectOne("userMapper.findOneForMybatis", 1);
+        //打印数据
+        System.out.println("user = " + user);
+        //释放资源
+        sqlSession.close();
+    }
+
 
 
 }
