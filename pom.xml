@@ -45,6 +45,9 @@
 
       <!--   MyBatis   -->
       <mybatis.version>3.5.9</mybatis.version>
+
+      <!--   hutool utils   -->
+      <hutool-all.version>5.7.15</hutool-all.version>
  </properties>
 
   <dependencies>
@@ -209,6 +212,12 @@
           <version>${mybatis.version}</version>
       </dependency>
 
+      <!--   hutool工具包   -->
+      <dependency>
+          <groupId>cn.hutool</groupId>
+          <artifactId>hutool-all</artifactId>
+          <version>${hutool-all.version}</version>
+      </dependency>
 
   </dependencies>
 

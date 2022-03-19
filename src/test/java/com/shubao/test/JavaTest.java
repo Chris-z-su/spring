@@ -1,5 +1,6 @@
 package com.shubao.test;
 
+import cn.hutool.Hutool;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ public class JavaTest {
     public void test4(){
         HashMap hashMap = new HashMap();
         System.out.println(hashMap);
+    }
+
+    @Test
+    public void test5(){
+        System.out.println("Hutool.getAllUtils() = " + Hutool.getAllUtils());
     }
 
 }
