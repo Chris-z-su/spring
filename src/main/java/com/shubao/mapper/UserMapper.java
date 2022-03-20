@@ -18,4 +18,9 @@ public interface UserMapper {
     public void save(User user);
 
     public User findByid(int id);
+
+    List<User> findAll();
+
+    List<User> findUserAndRole();
+
 }

@@ -234,7 +234,7 @@ public class MyBatisTest {
     }
 
     /**
-     * 分页插件：PageHelper
+     * 多表联合查询：一对一
      * @throws IOException
      */
     @Test
@@ -256,5 +256,55 @@ public class MyBatisTest {
         //释放资源
         sqlSession.close();
     }
+
+
+    /**
+     * 多表联合查询：一对多
+     * @throws IOException
+     */
+    @Test
+    public void test10() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        List<User> userList = userMapper.findAll();
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
+
+        //释放资源
+        sqlSession.close();
+    }
+
+    /**
+     * 多表联合查询：多对多  三表
+     * @throws IOException
+     */
+    @Test
+    public void test11() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        List<User> userList = userMapper.findUserAndRole();
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
+
+        //释放资源
+        sqlSession.close();
+    }
+
 
 }

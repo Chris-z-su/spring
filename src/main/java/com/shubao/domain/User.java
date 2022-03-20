@@ -20,10 +20,13 @@ public class User {
     //当前用户具备哪些角色
     private List<Role> roles;
 
+    //当前用户存在那些订单：一对多
+    private List<Order> orderList;
+
     public User() {
     }
 
-    public User(Long id, String username, String email, String password, String phoneNum, Date birthday, List<Role> roles) {
+    public User(Long id, String username, String email, String password, String phoneNum, Date birthday, List<Role> roles, List<Order> orderList) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -31,6 +34,7 @@ public class User {
         this.phoneNum = phoneNum;
         this.birthday = birthday;
         this.roles = roles;
+        this.orderList = orderList;
     }
 
     public Long getId() {
@@ -89,6 +93,14 @@ public class User {
         this.roles = roles;
     }
 
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -99,6 +111,7 @@ public class User {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", birthday=" + birthday +
                 ", roles=" + roles +
+                ", orderList=" + orderList +
                 '}';
     }
 }

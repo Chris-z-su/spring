@@ -17,12 +17,25 @@
         <result column="ordertime" property="ordertime" />
         <result column="total" property="total" />
 
-        <result column="uid" property="user.id" />
-        <result column="username" property="user.username" />
-        <result column="email" property="user.email" />
-        <result column="password" property="user.password" />
-        <result column="phoneNum" property="user.phoneNum" />
-        <result column="birthday" property="user.birthday" />
+<!--        <result column="uid" property="user.id" />-->
+<!--        <result column="username" property="user.username" />-->
+<!--        <result column="email" property="user.email" />-->
+<!--        <result column="password" property="user.password" />-->
+<!--        <result column="phoneNum" property="user.phoneNum" />-->
+<!--        <result column="birthday" property="user.birthday" />-->
+
+        <!--
+            property：当前实体（order）中的属性名称（private User user）
+            javaType：当前实体（order）中的属性的类型(User)
+        -->
+        <association property="user" javaType="user">
+            <id column="uid" property="id" />
+            <result column="username" property="username" />
+            <result column="email" property="email" />
+            <result column="password" property="password" />
+            <result column="phoneNum" property="phoneNum" />
+            <result column="birthday" property="birthday" />
+        </association>
 
     </resultMap>
 

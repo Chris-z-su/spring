@@ -86,4 +86,52 @@
         </where>
     </select>
 
+    <resultMap id="userMap" type="user">
+        <id column="uid" property="id" />
+        <result column="username" property="username" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="phoneNum" property="phoneNum" />
+        <result column="birthday" property="birthday" />
+
+        <!--
+            配置集合信息
+                property: 集合名称
+                ofType: 当前集合中的数据类型
+         -->
+        <collection property="orderList" ofType="order">
+            <!-- 封装order的数据 -->
+            <id column="oid" property="id" />
+            <result column="ordertime" property="ordertime" />
+            <result column="total" property="total" />
+        </collection>
+
+    </resultMap>
+
+    <select id="findAll" resultMap="userMap">
+        select *, o.id oid from sys_user u, sys_order o where u.id = o.uid
+    </select>
+
+    <resultMap id="userRoleMap" type="user">
+        <!-- user的信息 -->
+        <id column="uid" property="id" />
+        <result column="username" property="username" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="phoneNum" property="phoneNum" />
+        <result column="birthday" property="birthday" />
+
+        <!-- user内部的roleList的信息 -->
+        <collection property="roles" ofType="role">
+            <id column="roleId" property="id" />
+            <result column="roleName" property="roleName" />
+            <result column="roleDesc" property="roleDesc" />
+        </collection>
+
+    </resultMap>
+
+    <select id="findUserAndRole" resultMap="userRoleMap">
+        select * from sys_user u, sys_user_role ur, sys_role r where u.id = ur.userId and ur.roleId = r.id
+    </select>
+
 </mapper>

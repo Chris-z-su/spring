@@ -9,6 +9,7 @@
     <typeAliases>
         <typeAlias type="com.shubao.domain.User" alias="user" />
         <typeAlias type="com.shubao.domain.Order" alias="order" />
+        <typeAlias type="com.shubao.domain.Role" alias="role" />
     </typeAliases>
 
     <!--  注册自定义类型处理器  -->
