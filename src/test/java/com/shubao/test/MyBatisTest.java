@@ -1,6 +1,9 @@
 package com.shubao.test;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.shubao.domain.User;
+import com.shubao.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +12,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.List;
 
 public class MyBatisTest {
@@ -133,5 +137,98 @@ public class MyBatisTest {
     }
 
 
+    /**
+     * 自定义类型转换器：保存一个对象
+     * @throws IOException
+     */
+    @Test
+    public void test6() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        //创建User对象
+        User user = new User();
+        user.setUsername("sakura");
+        user.setPassword("123456");
+        user.setEmail("sakura@gmail.com");
+        user.setPhoneNum("18899523266");
+        user.setBirthday(new Date("2002/05/20"));
+
+        //执行保存操作
+        userMapper.save(user);
+        //提交事务
+        sqlSession.commit();
+        //释放资源
+        sqlSession.close();
+    }
+
+
+    /**
+     * 自定义类型转换器：查询
+     * @throws IOException
+     */
+    @Test
+    public void test7() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        User user = userMapper.findByid(15);
+        System.out.println("user = " + user);
+
+        //释放资源
+        sqlSession.close();
+    }
+
+
+    /**
+     * 分页插件：PageHelper
+     * @throws IOException
+     */
+    @Test
+    public void test8() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        //设置分页的相关参数  当前页、每页显示的条数
+        PageHelper.startPage(3, 3);
+
+        List<User> userList = userMapper.findAllForMybatis();
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
+
+        //获得与分页相关的数据
+        PageInfo<User> pageInfo = new PageInfo<>(userList);
+        System.out.println("当前页：" + pageInfo.getPageNum());
+        System.out.println("每页显示的条数：" + pageInfo.getPageSize());
+        System.out.println("总条数：" + pageInfo.getTotal());
+        System.out.println("总页数：" + pageInfo.getPages());
+        System.out.println("上一页：" + pageInfo.getPrePage());
+        System.out.println("下一页：" + pageInfo.getNextPage());
+        System.out.println("是否是第一页：" + pageInfo.isIsFirstPage());
+        System.out.println("是否是最后一页：" + pageInfo.isIsLastPage());
+
+
+        //释放资源
+        sqlSession.close();
+    }
 
 }

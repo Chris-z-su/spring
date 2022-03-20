@@ -10,6 +10,19 @@
         <typeAlias type="com.shubao.domain.User" alias="user" />
     </typeAliases>
 
+    <!--  注册自定义类型处理器  -->
+    <typeHandlers>
+        <typeHandler handler="com.shubao.handler.DateTypeHandler" />
+    </typeHandlers>
+    
+    <!--  配置分页插件助手  -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!-- 指定方言 -->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
     <!--  数据源环境  -->
     <environments default="developement">
         <environment id="developement">

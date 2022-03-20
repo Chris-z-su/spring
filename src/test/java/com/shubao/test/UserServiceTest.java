@@ -1,6 +1,6 @@
 package com.shubao.test;
 
-import com.shubao.dao.UserMapper;
+import com.shubao.mapper.UserMapper;
 import com.shubao.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

@@ -1,4 +1,4 @@
-package com.shubao.dao;
+package com.shubao.mapper;
 
 import com.shubao.domain.User;
 
@@ -14,4 +14,8 @@ public interface UserMapper {
     List<User> findByCondition(User user);
 
     List<User> findByIds(List<Long> ids);
+
+    public void save(User user);
+
+    public User findByid(int id);
 }
