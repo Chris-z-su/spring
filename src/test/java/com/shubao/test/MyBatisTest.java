@@ -2,7 +2,9 @@ package com.shubao.test;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.shubao.domain.Order;
 import com.shubao.domain.User;
+import com.shubao.mapper.OrderMapper;
 import com.shubao.mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -226,6 +228,30 @@ public class MyBatisTest {
         System.out.println("是否是第一页：" + pageInfo.isIsFirstPage());
         System.out.println("是否是最后一页：" + pageInfo.isIsLastPage());
 
+
+        //释放资源
+        sqlSession.close();
+    }
+
+    /**
+     * 分页插件：PageHelper
+     * @throws IOException
+     */
+    @Test
+    public void test9() throws IOException {
+        //获取核心配置文件
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        //获得session工厂对象
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        //获得session会话对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //执行操作，参数：namespace + id
+        OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+
+        List<Order> orderList = orderMapper.findAll();
+        for (Order order : orderList) {
+            System.out.println("order = " + order);
+        }
 
         //释放资源
         sqlSession.close();

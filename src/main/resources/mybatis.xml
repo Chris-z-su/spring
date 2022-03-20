@@ -8,6 +8,7 @@
     <!--  自定义别名  -->
     <typeAliases>
         <typeAlias type="com.shubao.domain.User" alias="user" />
+        <typeAlias type="com.shubao.domain.Order" alias="order" />
     </typeAliases>
 
     <!--  注册自定义类型处理器  -->
@@ -39,6 +40,7 @@
     <!--  加载映射文件  -->
     <mappers>
         <mapper resource="com/shubao/mapper/UserMapper.xml" />
+        <mapper resource="com/shubao/mapper/OrderMapper.xml" />
     </mappers>
 
 
