@@ -114,7 +114,7 @@
 
     <resultMap id="userRoleMap" type="user">
         <!-- user的信息 -->
-        <id column="uid" property="id" />
+        <id column="userId" property="id" />
         <result column="username" property="username" />
         <result column="email" property="email" />
         <result column="password" property="password" />
