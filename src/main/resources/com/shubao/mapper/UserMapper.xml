@@ -23,9 +23,9 @@
 
 
     <!--  查询操作  -->
-    <select id="findAllForMybatis" resultType="user">
-        select * from sys_user
-    </select>
+<!--    <select id="findAllForMybatis" resultType="user">-->
+<!--        select * from sys_user-->
+<!--    </select>-->
 
     <!--  插入操作  -->
     <insert id="insertForMybatis" parameterType="com.shubao.domain.User">
@@ -44,9 +44,9 @@
     </delete>
 
     <!--  根据id查询  -->
-    <select id="findOneForMybatis" resultType="user" parameterType="int">
-        select * from sys_user where id = #{id}
-    </select>
+<!--    <select id="findOneForMybatis" resultType="user" parameterType="int">-->
+<!--        select * from sys_user where id = #{id}-->
+<!--    </select>-->
 
     <!--  多条件查询  -->
     <select id="findByCondition" parameterType="user" resultType="user">
@@ -73,9 +73,9 @@
         </where>
     </select>
 
-    <insert id="save" parameterType="user">
-        insert into sys_user values(#{id}, #{username}, #{email}, #{password}, #{phoneNum}, #{birthday})
-    </insert>
+<!--    <insert id="save" parameterType="user">-->
+<!--        insert into sys_user values(#{id}, #{username}, #{email}, #{password}, #{phoneNum}, #{birthday})-->
+<!--    </insert>-->
 
     <select id="findByid" parameterType="int" resultType="user">
         <include refid="selectUser" />

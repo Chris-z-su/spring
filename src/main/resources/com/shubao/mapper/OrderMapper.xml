@@ -39,8 +39,8 @@
 
     </resultMap>
 
-    <select id="findAll" resultMap="orderMap">
-        select *, o.id oid from sys_order o, sys_user u where o.uid = u.id
-    </select>
+<!--    <select id="findAll" resultMap="orderMap">-->
+<!--        select *, o.id oid from sys_order o, sys_user u where o.uid = u.id-->
+<!--    </select>-->
 
 </mapper>

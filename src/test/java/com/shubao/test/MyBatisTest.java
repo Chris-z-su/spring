@@ -22,12 +22,15 @@ public class MyBatisTest {
 
     private UserMapper userMapper;
 
+    private OrderMapper orderMapper;
+
     @Before
     public void before() throws IOException {
         InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         userMapper = sqlSession.getMapper(UserMapper.class);
+        orderMapper = sqlSession.getMapper(OrderMapper.class);
     }
 
     /**
@@ -331,8 +334,33 @@ public class MyBatisTest {
     @Test
     public void test13() throws IOException {
         List<User> userList = userMapper.findAllForMybatis();
-        System.out.println(userList);
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
     }
 
+    @Test
+    public void test14() throws IOException {
+        List<Order> orderList = orderMapper.findAll();
+        for (Order order : orderList) {
+            System.out.println("order = " + order);
+        }
+    }
+
+    @Test
+    public void test15() throws IOException {
+        List<User> userList = userMapper.findUserAndOrderAll();
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
+    }
+
+    @Test
+    public void test16() throws IOException {
+        List<User> userList = userMapper.findUserAndRoleAll();
+        for (User user : userList) {
+            System.out.println("user = " + user);
+        }
+    }
 
 }
