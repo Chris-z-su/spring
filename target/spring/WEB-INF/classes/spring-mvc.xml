@@ -11,6 +11,7 @@
     <!--  Controller的组件扫描  -->
     <!--<context:component-scan base-package="com.shubao.controller"></context:component-scan>-->
 
+    <!--  组件扫描：主要扫描Controller  -->
     <context:component-scan base-package="com.shubao.controller">
         <!-- include 包括 ， exclude 不包括、排除-->
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>-->

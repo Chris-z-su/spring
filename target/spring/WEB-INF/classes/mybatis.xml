@@ -7,9 +7,12 @@
 
     <!--  自定义别名  -->
     <typeAliases>
-        <typeAlias type="com.shubao.domain.User" alias="user" />
-        <typeAlias type="com.shubao.domain.Order" alias="order" />
-        <typeAlias type="com.shubao.domain.Role" alias="role" />
+<!--        <typeAlias type="com.shubao.domain.User" alias="user" />-->
+<!--        <typeAlias type="com.shubao.domain.Order" alias="order" />-->
+<!--        <typeAlias type="com.shubao.domain.Role" alias="role" />-->
+<!--        <typeAlias type="com.shubao.domain.Account" alias="account" />-->
+        <!--    扫描domain下所有实体类    -->
+        <package name="com.shubao.domain" />
     </typeAliases>
 
     <!--  注册自定义类型处理器  -->
@@ -39,9 +42,15 @@
     </environments>
 
     <!--  加载映射文件  -->
+    <!--<mappers>-->
+        <!--<mapper resource="com/shubao/mapper/UserMapper.xml" />-->
+        <!--<mapper resource="com/shubao/mapper/OrderMapper.xml" />-->
+    <!--</mappers>-->
+
+    <!--加载映射关系-->
     <mappers>
-        <mapper resource="com/shubao/mapper/UserMapper.xml" />
-        <mapper resource="com/shubao/mapper/OrderMapper.xml" />
+        <!--指定接口所在的包-->
+        <package name="com.shubao.mapper" />
     </mappers>
 
 
