@@ -39,9 +39,15 @@
     </environments>
 
     <!--  加载映射文件  -->
+    <!--<mappers>-->
+        <!--<mapper resource="com/shubao/mapper/UserMapper.xml" />-->
+        <!--<mapper resource="com/shubao/mapper/OrderMapper.xml" />-->
+    <!--</mappers>-->
+
+    <!--加载映射关系-->
     <mappers>
-        <mapper resource="com/shubao/mapper/UserMapper.xml" />
-        <mapper resource="com/shubao/mapper/OrderMapper.xml" />
+        <!--指定接口所在的包-->
+        <package name="com.shubao.mapper" />
     </mappers>
 
 

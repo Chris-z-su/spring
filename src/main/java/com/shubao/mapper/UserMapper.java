@@ -1,12 +1,14 @@
 package com.shubao.mapper;
 
 import com.shubao.domain.User;
+import org.apache.ibatis.annotations.Select;
 
 import java.io.IOException;
 import java.util.List;
 
 public interface UserMapper {
 
+    @Select("select * from sys_user")
     List<User> findAllForMybatis() throws IOException;
 
     User findOneForMybatis(int id) throws IOException;

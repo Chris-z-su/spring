@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" " http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 配置mapper标签,namespace属性，作用：唯一的 标识一个Mapper配置文件，保护文件中的标签ID不被污染。注意值不能重复-->
-<mapper namespace="com.shubao.dao.UserMapper">
+<mapper namespace="com.shubao.mapper.UserMapper">
 
     <!--配置SQL资源：
      查询:select标签
@@ -73,5 +73,65 @@
         </where>
     </select>
 
+    <insert id="save" parameterType="user">
+        insert into sys_user values(#{id}, #{username}, #{email}, #{password}, #{phoneNum}, #{birthday})
+    </insert>
+
+    <select id="findByid" parameterType="int" resultType="user">
+        <include refid="selectUser" />
+        <where>
+            <if test="id != 0">
+                and id = #{id}
+            </if>
+        </where>
+    </select>
+
+    <resultMap id="userMap" type="user">
+        <id column="uid" property="id" />
+        <result column="username" property="username" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="phoneNum" property="phoneNum" />
+        <result column="birthday" property="birthday" />
+
+        <!--
+            配置集合信息
+                property: 集合名称
+                ofType: 当前集合中的数据类型
+         -->
+        <collection property="orderList" ofType="order">
+            <!-- 封装order的数据 -->
+            <id column="oid" property="id" />
+            <result column="ordertime" property="ordertime" />
+            <result column="total" property="total" />
+        </collection>
+
+    </resultMap>
+
+    <select id="findAll" resultMap="userMap">
+        select *, o.id oid from sys_user u, sys_order o where u.id = o.uid
+    </select>
+
+    <resultMap id="userRoleMap" type="user">
+        <!-- user的信息 -->
+        <id column="userId" property="id" />
+        <result column="username" property="username" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="phoneNum" property="phoneNum" />
+        <result column="birthday" property="birthday" />
+
+        <!-- user内部的roleList的信息 -->
+        <collection property="roles" ofType="role">
+            <id column="roleId" property="id" />
+            <result column="roleName" property="roleName" />
+            <result column="roleDesc" property="roleDesc" />
+        </collection>
+
+    </resultMap>
+
+    <select id="findUserAndRole" resultMap="userRoleMap">
+        select * from sys_user u, sys_user_role ur, sys_role r where u.id = ur.userId and ur.roleId = r.id
+    </select>
 
 </mapper>
