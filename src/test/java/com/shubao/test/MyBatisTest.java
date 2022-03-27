@@ -10,6 +10,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,6 +19,16 @@ import java.util.Date;
 import java.util.List;
 
 public class MyBatisTest {
+
+    private UserMapper userMapper;
+
+    @Before
+    public void before() throws IOException {
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis.xml");
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        userMapper = sqlSession.getMapper(UserMapper.class);
+    }
 
     /**
      * 查询操作
@@ -304,6 +315,23 @@ public class MyBatisTest {
 
         //释放资源
         sqlSession.close();
+    }
+
+    @Test
+    public void test12() throws IOException {
+        User user = new User();
+        user.setUsername("wangwu");
+        user.setEmail("wangwu@gmail.com");
+        user.setPassword("123");
+        user.setPhoneNum("110119120");
+
+        userMapper.save(user);
+    }
+
+    @Test
+    public void test13() throws IOException {
+        List<User> userList = userMapper.findAllForMybatis();
+        System.out.println(userList);
     }
 
 

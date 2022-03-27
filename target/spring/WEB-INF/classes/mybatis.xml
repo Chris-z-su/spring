@@ -8,7 +8,22 @@
     <!--  自定义别名  -->
     <typeAliases>
         <typeAlias type="com.shubao.domain.User" alias="user" />
+        <typeAlias type="com.shubao.domain.Order" alias="order" />
+        <typeAlias type="com.shubao.domain.Role" alias="role" />
     </typeAliases>
+
+    <!--  注册自定义类型处理器  -->
+    <typeHandlers>
+        <typeHandler handler="com.shubao.handler.DateTypeHandler" />
+    </typeHandlers>
+    
+    <!--  配置分页插件助手  -->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!-- 指定方言 -->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
 
     <!--  数据源环境  -->
     <environments default="developement">
@@ -26,6 +41,7 @@
     <!--  加载映射文件  -->
     <mappers>
         <mapper resource="com/shubao/mapper/UserMapper.xml" />
+        <mapper resource="com/shubao/mapper/OrderMapper.xml" />
     </mappers>
 
 
