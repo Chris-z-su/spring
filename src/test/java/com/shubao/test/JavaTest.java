@@ -8,6 +8,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -65,5 +66,32 @@ public class JavaTest {
         Method[] methods = clazz.getMethods();
         System.out.println("methods = " + methods);
     }
+
+    @Test
+    public void test7(){
+        String[] array = new String[9];
+        array[1]="Proposal";
+        array[2] = "guProposalMain.getProposalNo()";
+        array[3] = "riskCode";
+        array[4] = "0000";
+        array[5] = "";
+        array[6] = "0";
+        array[7] = "";
+        array[8] = "";
+        System.out.println("array = " + array);
+    }
+
+    @Test
+    public void test8(){
+//        long aLong = 1021824000000L;
+//        Long aLong = 1021824000000L;
+        Long aLong = null;
+        if (aLong == null) {
+            return;
+        }
+        Date date = new Date(aLong);
+        System.out.println("date = " + date);
+    }
+
 
 }
