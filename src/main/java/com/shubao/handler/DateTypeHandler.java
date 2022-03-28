@@ -1,5 +1,7 @@
 package com.shubao.handler;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
@@ -10,6 +12,17 @@ import java.sql.SQLException;
 import java.util.Date;
 
 public class DateTypeHandler extends BaseTypeHandler<Date> {
+
+    /**
+     *
+     * log.debug("debug"); //调试
+     * log.info("information"); //信息
+     * log.warn("warning"); //警告
+     * log.error("error"); //错误
+     * log.fatal("fatal"); //致命错误
+     *
+     */
+    private static final Log logger = LogFactory.getLog(DateTypeHandler.class);
 
     /**
      * 将Java类型转换成数据库需要的类型

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>ITCAST - AdminLTE2定制版</title>
+<title>SHUBAO - AdminLTE2定制版</title>
 <meta name="description" content="AdminLTE2定制版">
 <meta name="keywords" content="AdminLTE2定制版">
 
@@ -57,6 +57,23 @@
 	href="${pageContext.request.contextPath}/plugins/ionslider/ion.rangeSlider.skinNice.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/plugins/bootstrap-slider/slider.css">
+
+	<style type="text/css">
+		/*书写CSS代码*/
+		.text-end {
+			text-align: right !important;
+		}
+		blockquote {
+			margin: 0 0 1rem;
+		}
+		.blockquote-footer {
+			margin-top: -1rem;
+			margin-bottom: 1rem;
+			font-size: 0.875em;
+			color: #6c757d;
+		}
+	</style>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -73,6 +90,32 @@
 
 		<!-- 内容区域 -->
 		<div class="content-wrapper">
+<%--			<div class="panel panel-default">--%>
+<%--				<div class="panel-body">--%>
+<%--					Basic panel example--%>
+<%--				</div>--%>
+<%--			</div>--%>
+<%--			<div class="jumbotron">--%>
+<%--				<p id="hitokoto">...</p>--%>
+<%--				<span id="from_who" style="float: right;"></span>--%>
+<%--				<span id="from" style="float: right;"></span>--%>
+<%--			</div>--%>
+<%--			<div>--%>
+<%--				<figure class="text-end">--%>
+<%--					<blockquote class="blockquote">--%>
+<%--						<p>A well-known quote, contained in a blockquote element.</p>--%>
+<%--					</blockquote>--%>
+<%--					<figcaption class="blockquote-footer">--%>
+<%--						Someone famous in <cite title="Source Title">Source Title</cite>--%>
+<%--					</figcaption>--%>
+<%--				</figure>--%>
+<%--			</div>--%>
+
+			<div class="text-end">
+				<p id="hitokoto" class="blockquote"></p>
+				<span id="from_who"  class="blockquote-footer"></span>
+				<span id="from"  class="blockquote-footer"></span>
+			</div>
 
 		</div>
 		<!-- 内容区域 /-->
@@ -196,6 +239,26 @@
 			// 激活导航位置
 			setSidebarActive("admin-index");
 		});
+	</script>
+
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open('get', 'https://v1.hitokoto.cn');
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				var data = JSON.parse(xhr.responseText);
+				console.log(data);
+				var hitokoto = document.getElementById('hitokoto');
+				hitokoto.innerText = data.hitokoto;
+				var from = document.getElementById('from');
+				from.innerText = "——《" + data.from + "》";
+				var from_who = document.getElementById('from_who');
+				if(data.from_who != null && data.from_who != "null"){
+					from_who.innerText = data.from_who;
+				}
+			}
+		}
+		xhr.send();
 	</script>
 </body>
 
