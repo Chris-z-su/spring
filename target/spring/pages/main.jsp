@@ -61,7 +61,9 @@
 	<style type="text/css">
 		/*书写CSS代码*/
 		.text-end {
-			text-align: right !important;
+			/*height: 300px;*/
+			text-align: center !important;
+			/*line-height:300px;*/
 		}
 		blockquote {
 			margin: 0 0 1rem;
@@ -95,11 +97,14 @@
 <%--					Basic panel example--%>
 <%--				</div>--%>
 <%--			</div>--%>
+	
+				<%-- old --%>
 <%--			<div class="jumbotron">--%>
 <%--				<p id="hitokoto">...</p>--%>
 <%--				<span id="from_who" style="float: right;"></span>--%>
 <%--				<span id="from" style="float: right;"></span>--%>
 <%--			</div>--%>
+
 <%--			<div>--%>
 <%--				<figure class="text-end">--%>
 <%--					<blockquote class="blockquote">--%>

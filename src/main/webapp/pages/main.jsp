@@ -61,7 +61,9 @@
 	<style type="text/css">
 		/*书写CSS代码*/
 		.text-end {
-			text-align: right !important;
+			/*height: 300px;*/
+			text-align: center !important;
+			/*line-height:300px;*/
 		}
 		blockquote {
 			margin: 0 0 1rem;

@@ -45,6 +45,7 @@
 
       <!--   MyBatis   -->
       <mybatis.version>3.5.9</mybatis.version>
+      <mybatis-spring.version>2.0.3</mybatis-spring.version>
 
       <!--   hutool utils   -->
       <hutool-all.version>5.7.15</hutool-all.version>
@@ -217,6 +218,12 @@
           <groupId>org.mybatis</groupId>
           <artifactId>mybatis</artifactId>
           <version>${mybatis.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.mybatis</groupId>
+          <artifactId>mybatis-spring</artifactId>
+          <version>${mybatis-spring.version}</version>
       </dependency>
 
       <!--   hutool工具包   -->

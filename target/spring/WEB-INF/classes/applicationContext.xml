@@ -70,4 +70,16 @@
     <!--  事务的注解驱动  -->
     <tx:annotation-driven transaction-manager="transactionManager" />
 
+    <!--配置sessionFactory-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!--加载MyBatis核心配置你文件-->
+        <property name="configLocation" value="classpath:mybatis.xml" />
+    </bean>
+
+    <!--扫描mapper所在的包，为mapper创建实现类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.shubao.mapper" />
+    </bean>
+
 </beans>

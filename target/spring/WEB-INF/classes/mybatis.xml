@@ -3,7 +3,7 @@
 <configuration>
 
     <!--  通过properties标签加载外部properties文件  -->
-    <properties resource="jdbc.properties" />
+    <!--<properties resource="jdbc.properties" />-->
 
     <!--  自定义别名  -->
     <typeAliases>
@@ -16,9 +16,9 @@
     </typeAliases>
 
     <!--  注册自定义类型处理器  -->
-    <typeHandlers>
-        <typeHandler handler="com.shubao.handler.DateTypeHandler" />
-    </typeHandlers>
+    <!--<typeHandlers>-->
+        <!--<typeHandler handler="com.shubao.handler.DateTypeHandler" />-->
+    <!--</typeHandlers>-->
     
     <!--  配置分页插件助手  -->
     <plugins>
@@ -29,17 +29,17 @@
     </plugins>
 
     <!--  数据源环境  -->
-    <environments default="developement">
-        <environment id="developement">
-            <transactionManager type="JDBC" />
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}" />
-                <property name="url" value="${jdbc.url}" />
-                <property name="username" value="${jdbc.username}" />
-                <property name="password" value="${jdbc.password}" />
-            </dataSource>
-        </environment>
-    </environments>
+    <!--<environments default="developement">-->
+        <!--<environment id="developement">-->
+            <!--<transactionManager type="JDBC" />-->
+            <!--<dataSource type="POOLED">-->
+                <!--<property name="driver" value="${jdbc.driver}" />-->
+                <!--<property name="url" value="${jdbc.url}" />-->
+                <!--<property name="username" value="${jdbc.username}" />-->
+                <!--<property name="password" value="${jdbc.password}" />-->
+            <!--</dataSource>-->
+        <!--</environment>-->
+    <!--</environments>-->
 
     <!--  加载映射文件  -->
     <!--<mappers>-->
