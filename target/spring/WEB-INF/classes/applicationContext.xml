@@ -60,12 +60,20 @@
 <!--            &lt;!&ndash;<tx:method name="*" />&ndash;&gt;-->
 <!--        </tx:attributes>-->
 <!--    </tx:advice>-->
+    <tx:advice id="txAdvice">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
 
     <!--  配置事务的aop的织入  -->
 <!--    <aop:config>-->
 <!--        <aop:pointcut id="txPointcut" expression="execution(* com.shubao.service.impl.*.*(..))" />-->
 <!--        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />-->
 <!--    </aop:config>-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.shubao.service.impl.*.*(..))" />
+    </aop:config>
 
     <!--  事务的注解驱动  -->
     <tx:annotation-driven transaction-manager="transactionManager" />
