@@ -361,6 +361,7 @@ public class MyBatisTest {
         for (User user : userList) {
             System.out.println("user = " + user);
         }
+
     }
 
 }
