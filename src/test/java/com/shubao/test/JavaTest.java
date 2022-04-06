@@ -351,4 +351,12 @@ public class JavaTest {
         }
     }
 
+    @Test
+    public void test18() {
+        String str = "";
+        System.out.println(str.equals(""));
+        System.out.println(str == "");
+        System.out.println(str != "");
+    }
+
 }
