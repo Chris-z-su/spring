@@ -84,6 +84,8 @@
       <!--   thymeleaf-extras-java8time   -->
       <thymeleaf-extras-java8time.version>1.0.0</thymeleaf-extras-java8time.version>
 
+      <!-- dubool -->
+      <dubbo.version>2.6.12</dubbo.version>
 
  </properties>
 
@@ -298,6 +300,20 @@
           <version>${activemq.version}</version>
       </dependency>
 
+      <!-- dubbo依赖 -->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>dubbo</artifactId>
+          <version>${dubbo.version}</version>
+      </dependency>
+      <!--
+           zkClient依赖  https://mvnrepository.com/artifact/com.github.sgroschupf/zkclient
+       -->
+      <dependency>
+          <groupId>com.github.sgroschupf</groupId>
+          <artifactId>zkclient</artifactId>
+          <version>0.1</version>
+      </dependency>
 
 
   </dependencies>
