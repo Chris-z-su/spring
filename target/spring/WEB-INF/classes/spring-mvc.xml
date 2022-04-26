@@ -40,9 +40,9 @@
     <!--<mvc:annotation-driven conversion-service="conversionService" />--><!--mvc的注解驱动，包括自定义转换器-->
 
     <!--表示在Spring MVC框架当中，开发哪些资源的访问-->
-    <!--<mvc:resources mapping="/js/**" location="/js/" />-->
-    <!--<mvc:resources mapping="/css/**" location="/css/" />-->
-    <!--<mvc:resources mapping="/img/**" location="/img/" />-->
+    <mvc:resources mapping="/js/**" location="/js/" />
+    <mvc:resources mapping="/css/**" location="/css/" />
+    <mvc:resources mapping="/img/**" location="/img/" />
 
     <!--3.静态资源权限开放：表示如果Spring框架找不到对应的资源，就交由原始的容器(tomcat)寻找对应的资源-->
     <mvc:default-servlet-handler />
